@@ -2,7 +2,6 @@ import os
 
 
 class Config:
-    SECRET_KEY = os.environ.get("SECRET_KEY", "change-me-in-production")
     DEBUG = os.environ.get("FLASK_DEBUG", "0") == "1"
     DATABASE_PATH = os.environ.get(
         "DATABASE_PATH",
