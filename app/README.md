@@ -30,6 +30,8 @@ Je crois que je suis à coté sur les classifications
 J'ai 45 element classifié acrobate alors que je devrais en avoir 17 
 https://demo.arkindex.org/browse/b3471f6a-1ce8-4702-959f-60bcad44eb93?type=photograph&class_id=bf256a7d-4cbe-4784-b962-95052db85959
 
+Je crois que j'ai. Il peut y avoir plusieurs accrobate par image. 
+
 Example d'image url
 https://europe.iiif.teklia.com/iiif/2/hikaria%2Fflickr%2F037_69_12206557985_o.jpg
 
