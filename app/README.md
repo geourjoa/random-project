@@ -30,6 +30,14 @@ Je crois que je suis à coté sur les classifications
 J'ai 45 element classifié acrobate alors que je devrais en avoir 17 
 https://demo.arkindex.org/browse/b3471f6a-1ce8-4702-959f-60bcad44eb93?type=photograph&class_id=bf256a7d-4cbe-4784-b962-95052db85959
 
+Example d'image url
+https://europe.iiif.teklia.com/iiif/2/hikaria%2Fflickr%2F037_69_12206557985_o.jpg
+
+je peux la récupérer avec l'url suivante
+
+https://europe.iiif.teklia.com/iiif/2/hikaria%2Fflickr%2F037_69_12206557985_o.jpg/full/400,/0/default.jpg
+
+
 J'aurais du commencer par l'autre page j'aurais pu etre sur de ce que je manipule
 
 # Partie 4 : Page search by tag

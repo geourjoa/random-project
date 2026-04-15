@@ -1,4 +1,4 @@
-from arkindex_export.models import Classification, Element, database
+from arkindex_export.models import Classification, Element, Image, database
 from flask import Blueprint, current_app, render_template, request
 from peewee import fn
 
@@ -39,12 +39,13 @@ def search_by_tag():
         open_db()
         elements = (
             Classification.select(
-                Element.id.alias("element_id"),
+                Classification.confidence,
                 Element.name.alias("element_name"),
                 Element.type.alias("element_type"),
-                Classification.confidence,
+                Image.url.alias("image_url"),
             )
             .join(Element, on=(Classification.element == Element.id))
+            .join(Image, on=(Element.image == Image.id))
             .where(Classification.class_name == query)
             .order_by(Classification.confidence.desc())
         )
