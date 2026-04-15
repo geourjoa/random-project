@@ -3,16 +3,14 @@
 {% block title %}Classifications{% endblock %}
 
 {% block content %}
-    <h1>Classifications List</h1>
-    <p>Showing the first 10 classifications.</p>
+    <h1>Classifications</h1>
+    <p>Showing all classification names with at least 10 elements linked.</p>
     <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
         <thead style="background-color: #333; color: #fff;">
             <tr>
                 <th>#</th>
                 <th>Class Name</th>
-                <th>Element</th>
-                <th>State</th>
-                <th>Confidence</th>
+                <th>Elements</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +18,7 @@
             <tr>
                 <td>{{ loop.index }}</td>
                 <td>{{ c.class_name }}</td>
-                <td>{{ c.element.name }}</td>
-                <td>{{ c.state }}</td>
-                <td>{{ "%.2f"|format(c.confidence) }}</td>
+                <td>{{ c.element_count }}</td>
             </tr>
             {% endfor %}
         </tbody>

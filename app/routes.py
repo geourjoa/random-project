@@ -1,5 +1,6 @@
-from arkindex_export.models import Classification, Element, database
+from arkindex_export.models import Classification, database
 from flask import Blueprint, current_app, render_template
+from peewee import fn
 
 main = Blueprint("main", __name__)
 
@@ -17,16 +18,15 @@ def index():
 @main.route("/classifications")
 def classifications():
     open_db()
+    element_count = fn.COUNT(Classification.element.distinct()).alias("element_count")
     rows = (
         Classification.select(
-            Classification.id,
             Classification.class_name,
-            Classification.state,
-            Classification.confidence,
-            Element.name.alias("element_name"),
+            element_count,
         )
-        .join(Element, on=(Classification.element == Element.id))
-        .limit(10)
+        .group_by(Classification.class_name)
+        .having(fn.COUNT(Classification.element.distinct()) >= 10)
+        .order_by(fn.COUNT(Classification.element.distinct()).desc())
     )
     return render_template("classifications.html", classifications=rows)
 
