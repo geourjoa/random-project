@@ -55,3 +55,12 @@ Il fqut que je récupère la liste de toutes les image qui ont un élement class
 # Dépot Github rendu 
 
 https://github.com/geourjoa/random-project
+
+# Install
+
+```bash
+git clone https://github.com/geourjoa/random-project
+cp .env.whatyouwant.sample .env
+# get the db and put it in the app folder
+docker compose up -d
+```
