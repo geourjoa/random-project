@@ -4,11 +4,27 @@
 
 {% block content %}
     <h1>Classifications List</h1>
-    <p>This is the classifications page. A list of classifications will be displayed here.</p>
-    <ul>
-        <li>Classification A — Landscape</li>
-        <li>Classification B — Portrait</li>
-        <li>Classification C — Abstract</li>
-        <li>Classification D — Architecture</li>
-    </ul>
+    <p>Showing the first 10 classifications.</p>
+    <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <thead style="background-color: #333; color: #fff;">
+            <tr>
+                <th>#</th>
+                <th>Class Name</th>
+                <th>State</th>
+                <th>Confidence</th>
+                <th>Element ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for c in classifications %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ c.class_name }}</td>
+                <td>{{ c.state }}</td>
+                <td>{{ "%.2f"|format(c.confidence) }}</td>
+                <td style="font-family: monospace; font-size: 0.85rem;">{{ c.element_id }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

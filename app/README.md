@@ -16,6 +16,7 @@ Je dockerise
 # Part 2: Partie métier
 
 J'utilise PyCharm pour explorer la BDD sqlite
+https://doc.teklia.com/arkindex/project/export/
 
 # Partie 3 : Page classification
 
