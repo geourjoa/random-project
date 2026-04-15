@@ -14,3 +14,12 @@ Je rajoute un hello world
 Je dockerise 
 
 # Part 2: Partie métier
+
+J'utilise PyCharm pour explorer la BDD sqlite
+
+
+
+
+# Dépot Github rendu 
+
+https://github.com/geourjoa/random-project
