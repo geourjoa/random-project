@@ -32,7 +32,11 @@
                         <td>{{ e.element.name }}</td>
                         <td>{{ e.element.type }}</td>
                         <td>{{ "%.2f"|format(e.confidence) }}</td>
-                        <td><a href="{{ e.element.image.url }}" target="_blank">{{ e.element.image.url }}</a></td>
+                        <td>
+                            <a href="{{ e.element.image.url }}/full/full/0/default.jpg" target="_blank">
+                                <img src="{{ e.element.image.url }}/full/200,/0/default.jpg" alt="{{ e.element.name }}" style="max-height: 120px;">
+                            </a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </tbody>
