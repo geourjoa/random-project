@@ -64,3 +64,7 @@ cp .env.whatyouwant.sample .env
 # get the db and put it in the app folder
 docker compose up -d
 ```
+
+# Deployment
+
+https://random-project.tetras-libre.fr
