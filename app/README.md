@@ -46,7 +46,10 @@ J'aurais du commencer par l'autre page j'aurais pu etre sur de ce que je manipul
 
 # Partie 4 : Page search by tag
 
+  >  the list of Photograph tagged with a classification (this is a detail view of a classification), displaying all the images
 
+
+Il fqut que je récupère la liste de toutes les image qui ont un élement classifié "la valeur de l'input"
 
 
 # Dépot Github rendu 
