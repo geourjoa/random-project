@@ -13,7 +13,8 @@ Le temps dégagé par les LLM me permet par exemple de déployer mon app sur l'i
 Ce test ne montrera pas mon niveau de code mais pourra démontrer :
 - Capacité à comprendre un problème rapidement
 - Faire des choix techniques pertinents
-- Compréhension du métier
+- Compréhension du métier 
+- Compréhension d'une Lib nouvelle
 - Capacité à review du code
 - Capacité à déployer (dans une infra que je connais certes)
 - Capacité à utiliser les LLM pour être plus efficace

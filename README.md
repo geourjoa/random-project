@@ -61,10 +61,10 @@ https://github.com/geourjoa/random-project
 ```bash
 git clone https://github.com/geourjoa/random-project
 cp .env.whatyouwant.sample .env
-# get the db and put it in the app folder
+# get the db and put it in the app folder (next to config.py)
 docker compose up -d
 ```
 
-# Deployment
+# Deploiement accessible
 
 https://random-project.tetras-libre.fr
