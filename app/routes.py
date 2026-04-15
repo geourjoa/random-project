@@ -1,5 +1,5 @@
 from arkindex_export.models import Classification, Element, Image, database
-from flask import Blueprint, current_app, render_template, request
+from flask import Blueprint, current_app, render_template, request, abort
 from peewee import fn
 
 main = Blueprint("main", __name__)
@@ -50,5 +50,34 @@ def search_by_tag():
             .order_by(Classification.confidence.desc())
         )
     return render_template("search_by_tag.html", query=query, elements=elements)
+
+
+@main.route("/image/<image_id>")
+def image_detail(image_id):
+    open_db()
+    try:
+        image = Image.get_by_id(image_id)
+    except Image.DoesNotExist:
+        abort(404)
+
+    classifications = (
+        Classification.select(
+            Classification.class_name,
+            Classification.confidence,
+            Classification.state,
+            Element.name.alias("element_name"),
+            Element.type.alias("element_type"),
+            Element.id.alias("element_id"),
+        )
+        .join(Element, on=(Classification.element == Element.id))
+        .where((Element.image == image_id) & (Element.type == "photograph"))
+        .order_by(Classification.confidence.desc())
+    )
+
+    return render_template(
+        "image_detail.html",
+        image=image,
+        classifications=classifications,
+    )
 
 
