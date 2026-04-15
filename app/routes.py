@@ -1,15 +1,12 @@
-import sqlite3
-
+from arkindex_export.models import Classification, Element, database
 from flask import Blueprint, current_app, render_template
 
 main = Blueprint("main", __name__)
 
 
-def get_db():
+def open_db():
     db_path = current_app.config["DATABASE_PATH"]
-    conn = sqlite3.connect(db_path)
-    conn.row_factory = sqlite3.Row
-    return conn
+    database.init(db_path)
 
 
 @main.route("/")
@@ -19,12 +16,18 @@ def index():
 
 @main.route("/classifications")
 def classifications():
-    conn = get_db()
-    rows = conn.execute(
-        "SELECT id, element_id, class_name, state, confidence "
-        "FROM classification LIMIT 10"
-    ).fetchall()
-    conn.close()
+    open_db()
+    rows = (
+        Classification.select(
+            Classification.id,
+            Classification.class_name,
+            Classification.state,
+            Classification.confidence,
+            Element.name.alias("element_name"),
+        )
+        .join(Element, on=(Classification.element == Element.id))
+        .limit(10)
+    )
     return render_template("classifications.html", classifications=rows)
 
 

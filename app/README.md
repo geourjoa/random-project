@@ -1,5 +1,7 @@
 J'écris ce fichier pour expliquer ma démarche de développement de l'application.
 
+https://notes.teklia.com/s/SxgmcAI_YL#
+
 J'utilise pycharm et Github Copilot. À l'occasion j'utilise MammouthAI pour contre vérifier les réponses de Copilot.
 Pycharm me permet de naviguer dans la bdd sqllite, je n'avais jamais eu l'occasion d'utiliser cette petite DB.
 
@@ -17,6 +19,8 @@ Je dockerise
 
 J'utilise PyCharm pour explorer la BDD sqlite
 https://doc.teklia.com/arkindex/project/export/
+
+Je n'ai pas bien compris ce que c'était ce 'Photograph'. Est-ce que c'est ce qu'il appelle element ?
 
 # Partie 3 : Page classification
 

@@ -10,9 +10,9 @@
             <tr>
                 <th>#</th>
                 <th>Class Name</th>
+                <th>Element</th>
                 <th>State</th>
                 <th>Confidence</th>
-                <th>Element ID</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +20,9 @@
             <tr>
                 <td>{{ loop.index }}</td>
                 <td>{{ c.class_name }}</td>
+                <td>{{ c.element.name }}</td>
                 <td>{{ c.state }}</td>
                 <td>{{ "%.2f"|format(c.confidence) }}</td>
-                <td style="font-family: monospace; font-size: 0.85rem;">{{ c.element_id }}</td>
             </tr>
             {% endfor %}
         </tbody>
