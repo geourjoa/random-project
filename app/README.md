@@ -17,6 +17,10 @@ Je dockerise
 
 J'utilise PyCharm pour explorer la BDD sqlite
 
+# Partie 3 : Page classification
+
+# Partie 4 : Page search by tag
+
 
 
 
