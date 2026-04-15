@@ -32,6 +32,8 @@ https://demo.arkindex.org/browse/b3471f6a-1ce8-4702-959f-60bcad44eb93?type=photo
 
 Je crois que j'ai. Il peut y avoir plusieurs accrobate par image. 
 
+J'avais à moitié, il fallait rajouter le type photograph idiot
+
 Example d'image url
 https://europe.iiif.teklia.com/iiif/2/hikaria%2Fflickr%2F037_69_12206557985_o.jpg
 

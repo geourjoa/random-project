@@ -25,6 +25,7 @@ def classifications():
             image_count,
         )
         .join(Element, on=(Classification.element == Element.id))
+        .where(Element.type == "photograph")
         .group_by(Classification.class_name)
         .having(fn.COUNT(Element.image.distinct()) >= 10)
         .order_by(fn.COUNT(Element.image.distinct()).desc())
@@ -47,7 +48,10 @@ def search_by_tag():
             )
             .join(Element, on=(Classification.element == Element.id))
             .join(Image, on=(Element.image == Image.id))
-            .where(Classification.class_name == query)
+            .where(
+                (Classification.class_name == query)
+                & (Element.type == "photograph")
+            )
             .order_by(Classification.confidence.desc())
         )
     return render_template("search_by_tag.html", query=query, elements=elements)
