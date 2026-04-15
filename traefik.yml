@@ -4,7 +4,7 @@ services:
       - default
       - traefik
     expose:
-      - 80
+      - 5000
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=traefik"
@@ -12,7 +12,6 @@ services:
       - "traefik.http.routers.${NAME}.tls.certresolver=myresolver"
       - "traefik.http.routers.${NAME}.entrypoints=web,websecure"
       - "traefik.http.routers.${NAME}.middlewares=hardening@docker"
-
 
 networks:
   traefik:
