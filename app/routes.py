@@ -40,12 +40,7 @@ def search_by_tag():
     if query:
         open_db()
         elements = (
-            Classification.select(
-                Classification.confidence,
-                Element.name.alias("element_name"),
-                Element.type.alias("element_type"),
-                Image.url.alias("image_url"),
-            )
+            Classification.select(Classification, Element, Image)
             .join(Element, on=(Classification.element == Element.id))
             .join(Image, on=(Element.image == Image.id))
             .where(
