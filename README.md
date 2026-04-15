@@ -68,3 +68,11 @@ docker compose up -d
 # Deploiement accessible
 
 https://random-project.tetras-libre.fr
+
+# Liste de chose qui ne vont pas : 
+- Db management catastrophique
+   - open db est call à chaque fois et n'est pas fermé
+   - database.init() est appelé aussi à chaque fois
+- Aucune gestion d'erreur
+- Inline CSS à l'arrache 
+- 
