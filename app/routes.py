@@ -18,15 +18,16 @@ def index():
 @main.route("/classifications")
 def classifications():
     open_db()
-    element_count = fn.COUNT(Classification.element.distinct()).alias("element_count")
+    image_count = fn.COUNT(Element.image.distinct()).alias("image_count")
     rows = (
         Classification.select(
             Classification.class_name,
-            element_count,
+            image_count,
         )
+        .join(Element, on=(Classification.element == Element.id))
         .group_by(Classification.class_name)
-        .having(fn.COUNT(Classification.element.distinct()) >= 10)
-        .order_by(fn.COUNT(Classification.element.distinct()).desc())
+        .having(fn.COUNT(Element.image.distinct()) >= 10)
+        .order_by(fn.COUNT(Element.image.distinct()).desc())
     )
     return render_template("classifications.html", classifications=rows)
 
