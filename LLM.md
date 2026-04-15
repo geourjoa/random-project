@@ -5,9 +5,8 @@ J'ai bien conscience de leur potentiel et de leurs limites, et je pense que les 
 
 Cela transforme notre travail :
 
-- Moins de boilercode ou de dumbcode
+- Moins de temps pour faire boilercode ou du dumbcode
 - Plus de temps pour les décisions d'architecture, compréhension du métier, et les tâches à plus forte valeur ajoutée
-
 
 Le temps dégagé par les LLM me permet par exemple de déployer mon app sur l'infra de Tétras.
 
@@ -16,4 +15,5 @@ Ce test ne montrera pas mon niveau de code mais pourra démontrer :
 - Faire des choix techniques pertinents
 - Compréhension du métier
 - Capacité à review du code
+- Capacité à déployer (dans une infra que je connais certes)
 - Capacité à utiliser les LLM pour être plus efficace
