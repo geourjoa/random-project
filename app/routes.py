@@ -1,5 +1,5 @@
-from arkindex_export.models import Classification, database
-from flask import Blueprint, current_app, render_template
+from arkindex_export.models import Classification, Element, database
+from flask import Blueprint, current_app, render_template, request
 from peewee import fn
 
 main = Blueprint("main", __name__)
@@ -33,6 +33,21 @@ def classifications():
 
 @main.route("/search-by-tag")
 def search_by_tag():
-    return render_template("search_by_tag.html")
+    query = request.args.get("q", "").strip()
+    elements = []
+    if query:
+        open_db()
+        elements = (
+            Classification.select(
+                Element.id.alias("element_id"),
+                Element.name.alias("element_name"),
+                Element.type.alias("element_type"),
+                Classification.confidence,
+            )
+            .join(Element, on=(Classification.element == Element.id))
+            .where(Classification.class_name == query)
+            .order_by(Classification.confidence.desc())
+        )
+    return render_template("search_by_tag.html", query=query, elements=elements)
 
 

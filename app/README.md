@@ -9,6 +9,8 @@ Je choisis une app flask car plus simple et rapide qu'un DJango.
 
 Mon choix sans contraintes aurait NestJS + React.
 
+En // de la lecture de l'énoncé, je l'envoi à mammouth pour qu'il l'analyse
+
 # Part 1: Setup de l'app
 
 J'init mon app flask
@@ -23,6 +25,12 @@ https://doc.teklia.com/arkindex/project/export/
 Je n'ai pas bien compris ce que c'était ce 'Photograph'. Est-ce que c'est ce qu'il appelle element ?
 
 # Partie 3 : Page classification
+
+Je crois que je suis à coté sur les classifications 
+J'ai 45 element classifié acrobate alors que je devrais en avoir 17 
+https://demo.arkindex.org/browse/b3471f6a-1ce8-4702-959f-60bcad44eb93?type=photograph&class_id=bf256a7d-4cbe-4784-b962-95052db85959
+
+J'aurais du commencer par l'autre page j'aurais pu etre sur de ce que je manipule
 
 # Partie 4 : Page search by tag
 

@@ -4,12 +4,40 @@
 
 {% block content %}
     <h1>Search by Tag</h1>
-    <p>This is the search-by-tag page. You will be able to search elements by tag here.</p>
-    <ul>
-        <li>#nature</li>
-        <li>#urban</li>
-        <li>#historical</li>
-        <li>#modern</li>
-    </ul>
+    <p>Enter a classification name to find all matching elements.</p>
+
+    <form method="get" action="{{ url_for('main.search_by_tag') }}" style="margin-bottom: 1.5rem;">
+        <input type="text" name="q" value="{{ query }}" placeholder="e.g. acrobate, temple, geisha..."
+               style="padding: 0.5rem; font-size: 1rem; width: 300px;">
+        <button type="submit" style="padding: 0.5rem 1rem; font-size: 1rem;">Search</button>
+    </form>
+
+    {% if query %}
+        {% if elements %}
+            <p>Found {{ elements|length }} element(s) for <strong>{{ query }}</strong>.</p>
+            <table border="1" cellpadding="8" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+                <thead style="background-color: #333; color: #fff;">
+                    <tr>
+                        <th>#</th>
+                        <th>Element Name</th>
+                        <th>Type</th>
+                        <th>Confidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for e in elements %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td>{{ e.element.name }}</td>
+                        <td>{{ e.element.type }}</td>
+                        <td>{{ "%.2f"|format(e.confidence) }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p>No elements found for <strong>{{ query }}</strong>.</p>
+        {% endif %}
+    {% endif %}
 {% endblock %}
 
